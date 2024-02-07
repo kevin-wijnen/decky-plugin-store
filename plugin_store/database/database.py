@@ -174,7 +174,7 @@ class Database:
             direction = desc
 
         if sort_by == SortType.NAME:
-            statement = statement.order_by(direction(collate(Artifact.name, "NOCASE")))
+            statement = statement.order_by(direction(Artifact.name))
         elif sort_by == SortType.DATE:
             statement = statement.order_by(direction(Artifact.created))
         elif sort_by == SortType.DOWNLOADS:
